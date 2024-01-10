@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "unifiedjs.vscode-mdx",
+        "dbaeumer.vscode-eslint",
+        "mikestead.dotenv",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "ecmel.vscode-html-css"
+    ]
+}
