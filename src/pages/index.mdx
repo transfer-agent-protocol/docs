@@ -1,0 +1,43 @@
+import { Cards, Card, Callout } from 'nextra/components';
+
+# Transfer Agent Protocol
+
+Transfer Agent Protocol is based on the [Open Cap Table Format](/protocol/ocf) and extends it with smart contracts to enable onchain cap table management.
+
+<Callout emoji="⏳">This documentation is currently in public preview</Callout>
+
+## Protocol Specification
+
+The protocol has three major components.
+
+- [Smart contracts](/protocol/tap-cap-table) that enable onchain cap table management. These create transactions onchain, creating a system that allows for primary ownership records to be stored onchain first, then synced to an offchain database.
+
+- [Offchain database](/protocol/tap-ocf) that stores the cap table data. We're currently using a MongoDB that stores cap table data in the [Open Cap Table Format](/protocol/tap-ocf).
+
+- [Server](https://github.com/transfer-agent-protocol/tap-cap-table/tree/main/src/routes) that interacts with both the smart contracts and the offchain database. This server is responsible for syncing the data between the two.
+
+<Cards>
+	<Card title="Open Cap Table Format" href="/protocol/tap-ocf"/>
+	<Card title="Onchain Cap Table" href="/protocol/tap-cap-table" />
+</Cards>
+
+
+## Dependencies
+
+To start developing on the Transfer Agent Protocol, you'll need the following dependencies installed on your machine:
+
+- [Docker](https://docs.docker.com/get-docker/)
+
+- [Foundry](https://getfoundry.sh/)
+
+```sh
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+- [Mongo Compass](https://www.mongodb.com/try/download/compass)
+
+- [Node.js v18.16.0](https://nodejs.org/en/download/)
+
+- [Postman App](https://www.postman.com/downloads/)
+
+- [Yarn v1.22.19](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
