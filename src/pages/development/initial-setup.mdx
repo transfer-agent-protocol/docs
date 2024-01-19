@@ -1,0 +1,25 @@
+import { Steps } from 'nextra/components';
+
+# Initial setup
+
+Our `.env.example` files are setup for local development with Docker and Foundry. You'll need to copy them to a new `.env` and update the values with your own. You have to do this twice in the root of the project and inside of the `/chain` folder.
+
+<Steps>
+
+### 1. In the root folder
+
+Copy the `.env.example` to `.env` in the root folder
+
+```bash
+cd tap-cap-table && cp .env.example .env
+```
+
+### 2. In the chain folder
+
+Copy the `.env.example` to `.env` in the `chain` folder
+
+```bash
+cd chain && cp .env.example .env
+```
+
+</Steps>
