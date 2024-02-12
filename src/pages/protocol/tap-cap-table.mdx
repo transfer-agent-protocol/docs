@@ -1,1 +1,22 @@
-# Onchain Cap Table
+
+import { Card, Cards, Callout } from 'nextra/components'
+
+# Onchain Cap Table Overview
+<Callout emoji="⏳">This documentation is currently in public preview</Callout>
+
+Let's go over smart contract and what it does. We're going to start with the Cap Table Factory.
+
+## Cap Table Factory
+
+The [CapTableFactory](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTableFactory.sol) smart contract uses OpenZeppelin's upgradeable beacon pattern to create and manage upgradeable instances of cap tables for tokenized assets, leveraging proxy contracts for modularity and upgradability.
+
+It lets the contract owner to create new cap table instances with specific initial parameters (ID, name, and initial shares authorized) and update the underlying cap table implementation for all instances via the beacon.
+
+The contract tracks each cap table proxy created, offering a function to count the total number of cap tables managed. The contract also provides a function to retrieve the address of a cap table proxy by its index.
+
+<Cards>
+  <Card
+    title="Deploying Cap Table Factory"
+    href="/development/factory-deployment"
+  />
+</Cards>
