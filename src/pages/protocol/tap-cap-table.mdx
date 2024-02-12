@@ -6,7 +6,7 @@ import { Card, Cards, Callout } from 'nextra/components'
 
 Let's go over smart contract and what it does. We're going to start with the Cap Table Factory.
 
-## Cap Table Factory
+## Factory
 
 The [CapTableFactory](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTableFactory.sol) smart contract uses OpenZeppelin's upgradeable beacon pattern to create and manage upgradeable instances of cap tables for tokenized assets, leveraging proxy contracts for modularity and upgradability.
 
@@ -14,9 +14,17 @@ It lets the contract owner to create new cap table instances with specific initi
 
 The contract tracks each cap table proxy created, offering a function to count the total number of cap tables managed. The contract also provides a function to retrieve the address of a cap table proxy by its index.
 
+## Cap Table
+
+The [CapTable](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTable.sol) contract manages tokenized stock with role-based access for secure operations. It tracks stakeholders, stock classes, and transactions, supporting stock issuance, repurchase, and adjustments. It uses OpenZeppelin's upgradeable contracts for enhanced functionality and security.
+
 <Cards>
   <Card
-    title="Deploying Cap Table Factory"
-    href="/development/factory-deployment"
+    title="Deploy Cap Table Factory"
+    href="/development/factory-deploy"
+  />
+  <Card
+    title="Deploy Cap Table"
+    href="/development/cap-table-deploy"
   />
 </Cards>
