@@ -4,21 +4,32 @@ import { Card, Cards, Callout } from 'nextra/components'
 # Onchain Cap Table Overview
 <Callout emoji="⏳">This documentation is currently in public preview</Callout>
 
-Let's go over smart contract and what it does. We're going to start with the Cap Table Factory.
-
 ## Factory
 
-The [CapTableFactory](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTableFactory.sol) smart contract uses OpenZeppelin's upgradeable beacon pattern to create and manage upgradeable instances of cap tables for tokenized assets, leveraging proxy contracts for modularity and upgradability.
-
-It lets the contract owner to create new cap table instances with specific initial parameters (ID, name, and initial shares authorized) and update the underlying cap table implementation for all instances via the beacon.
+The [CapTableFactory](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTableFactory.sol) smart contract uses OpenZeppelin's upgradeable beacon pattern to create and manage upgradeable instances of cap tables for tokenized stock records. It allows developers to update the underlying cap table implementation of all instances via the beacon. New cap table instances are created with specific initial parameters (`id`, `name`, and `initial_shares_authorized`).
 
 The contract tracks each cap table proxy created, offering a function to count the total number of cap tables managed. The contract also provides a function to retrieve the address of a cap table proxy by its index.
 
 ## Cap Table
 
-The [CapTable](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTable.sol) contract manages tokenized stock with role-based access for secure operations. It tracks stakeholders, stock classes, and transactions, supporting stock issuance, repurchase, and adjustments. It uses OpenZeppelin's upgradeable contracts for enhanced functionality and security.
+The [CapTable](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/CapTable.sol) contract manages tokenized stock with role-based access for secure operations. It tracks stakeholders, stock classes, and transactions, supporting stock issuance, repurchase, and adjustments using the [Structs Library](/protocol/structs-lib) and [Stock Functions](/protocol/stock-lib).
+
+## Delete Context
+
+[DeleteContext](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/lib/DeleteContext.sol): Deletes stakeholders' active positions by active security IDs, stakeholder IDs, and stock class IDs.
+
+## Adjustment
+[Adjustment](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/transactions/Adjustment.sol): Adjusts new shares authorized on a cap table (including tracking board approval date) after a round of funding or other event.
 
 <Cards>
+  <Card
+	title="Structs Library"
+	href="/protocol/structs-lib"
+	/>
+	<Card
+	title="Stock Functions"
+	href="/protocol/stock-lib"
+	/>
   <Card
     title="Deploy Cap Table Factory"
     href="/development/factory-deploy"
