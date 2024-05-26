@@ -1,6 +1,27 @@
+import { FileTree } from "nextra/components"
+
 # Stock Functions
 
-The `Stock` library contains functions to manage stock transactions, including issuance, transfer, cancellation, reissuance, repurchase, and retraction. The library also includes error definitions and internal utility functions to support these operations.
+[Stock](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/lib/Stock.sol) library contains functions to manage stock transactions, including issuance, transfer, cancellation, reissuance, repurchase, and retraction. The library also includes error definitions and internal utility functions to support these operations. You'll find them here:
+
+<FileTree>
+  <FileTree.Folder name="chain" defaultOpen>
+  <FileTree.Folder name="src" defaultOpen>
+		<FileTree.Folder name="interfaces" defaultClosed>
+			<FileTree.File name="ICapTable.sol" />
+			<FileTree.File name="ICapTableFactory.sol" />
+		</FileTree.Folder>
+		<FileTree.Folder name="lib" defaultOpen>
+			<FileTree.File name="DeleteContext.sol" />
+			<FileTree.File name="Stock.sol" />
+			<FileTree.File name="Structs.sol" />
+			<FileTree.File name="TxHelper.sol" />
+		</FileTree.Folder>
+			<FileTree.File name="CapTable.sol" />
+			<FileTree.File name="CapTableFactory.sol" />
+		</FileTree.Folder>
+	</FileTree.Folder>
+</FileTree>
 
 ## Errors
 

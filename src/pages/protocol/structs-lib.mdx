@@ -1,6 +1,27 @@
+import { FileTree } from "nextra/components"
+
 # Cap Table Structs
 
-[Structs](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/lib/Structs.sol) manage various aspects of the cap table, including issuers, stock classes, stakeholders, and different types of stock transactions.
+[Structs](https://github.com/transfer-agent-protocol/tap-cap-table/blob/main/chain/src/lib/Structs.sol) manage various aspects of the cap table, including issuers, stock classes, stakeholders, and different types of stock transactions. You'll find them here:
+
+<FileTree>
+  <FileTree.Folder name="chain" defaultOpen>
+  <FileTree.Folder name="src" defaultOpen>
+		<FileTree.Folder name="interfaces" defaultClosed>
+			<FileTree.File name="ICapTable.sol" />
+			<FileTree.File name="ICapTableFactory.sol" />
+		</FileTree.Folder>
+		<FileTree.Folder name="lib" defaultOpen>
+			<FileTree.File name="DeleteContext.sol" />
+			<FileTree.File name="Stock.sol" />
+			<FileTree.File name="Structs.sol" />
+			<FileTree.File name="TxHelper.sol" />
+		</FileTree.Folder>
+			<FileTree.File name="CapTable.sol" />
+			<FileTree.File name="CapTableFactory.sol" />
+		</FileTree.Folder>
+	</FileTree.Folder>
+</FileTree>
 
 ## Issuer
 
