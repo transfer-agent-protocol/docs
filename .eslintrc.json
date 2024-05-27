@@ -1,19 +1,19 @@
 {
-    "extends": ["next/core-web-vitals"],
-    "plugins": ["mdx"],
-    "overrides": [
-        {
-            "files": ["*.mdx"],
-            "extends": ["plugin:mdx/recommended"],
-            "rules": {
-                "semi": "off",
-                "react/no-unescaped-entities": "off"
-                // ... any other MDX specific rules
-            }
-        }
-    ],
-    "rules": {
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["mdx"],
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "extends": ["plugin:mdx/recommended"],
+      "rules": {
+        "semi": "off",
         "react/no-unescaped-entities": "off"
-        // ... any other rules you wish to override for all files
+        // ... any other MDX specific rules
+      }
     }
+  ],
+  "rules": {
+    "react/no-unescaped-entities": "off"
+    // ... any other rules you wish to override for all files
+  }
 }

@@ -19,7 +19,7 @@ const themeConfig = {
 		text: (
 			<span>
 				Copyright {new Date().getFullYear()} © {' '}
-					Alex Palmer, Victor Mimo
+					thatalexpalmer.eth
 			</span>
 		)
 	},
