@@ -326,7 +326,7 @@ function createRetraction(
 
 ### createAcceptance
 
-When to use: used when a stakeholder needs to accept stock that has been issued to them.
+When to use: Use when a stakeholder needs to accept stock that has been issued to them.
 
 ````solidity
 function createAcceptance(uint256 nonce, bytes16 securityId, string[] memory comments, bytes[] storage transactions) external {
@@ -342,6 +342,8 @@ function createAcceptance(uint256 nonce, bytes16 securityId, string[] memory com
 ## Internal Utility Functions
 
 ### _updateContext
+
+When to use: Use internally to update active security IDs and positions and increase shares issued for issuer and stock class after creating an issuance.
 
 ````solidity
 function _updateContext(
@@ -375,9 +377,13 @@ function _updateContext(
 
 ### _safeNow()
 
+When to use: Use internally to get the current block timestamp.
+
 - `_safeNow() internal view returns (uint40)`: Returns the current block timestamp.
 
 ### _subtractSharesIssued
+
+When to use: Use internally to decrease the shares issued for the issuer and stock class after a cancellation, retraction, or repurchase.
 
 ````solidity
 function _subtractSharesIssued(Issuer storage issuer, StockClass storage stockClass, uint256 quantity) internal {
@@ -389,6 +395,8 @@ function _subtractSharesIssued(Issuer storage issuer, StockClass storage stockCl
 - Subtracts shares issued for the issuer and stock class.
 
 ### _transferSingleStock
+
+When to use: Use internally to handle the transfer of stock for a single security ID.
 
 ````solidity
 function _transferSingleStock(
@@ -459,6 +467,8 @@ function _transferSingleStock(
 
 ### _checkInvalidQuantityOrPrice
 
+When to use: Use internally to validate the quantity and price parameters.
+
 ````solidity
 function _checkInvalidQuantityOrPrice(uint256 quantity, uint256 price) internal pure {
         if (quantity <= 0 || price <= 0) {
@@ -470,6 +480,8 @@ function _checkInvalidQuantityOrPrice(uint256 quantity, uint256 price) internal 
 - Throws `InvalidQuantityOrPrice` if invalid.
 
 ### _checkInsuffientAmount
+
+When to use: Use internally to ensure there are enough shares available for the transaction.
 
 ````solidity
 function _checkInsuffientAmount(uint256 available, uint256 desired) internal pure {
@@ -483,6 +495,8 @@ function _checkInsuffientAmount(uint256 available, uint256 desired) internal pur
 
 ### _checkActivePositionExists
 
+When to use: Use internally to ensure the active position exists before performing operations on it.
+
 ````solidity
 function _checkActivePositionExists(ActivePosition memory activePosition, bytes16 stakeholderId, bytes16 securityId) internal pure {
         if (activePosition.quantity == 0) {
@@ -494,6 +508,8 @@ function _checkActivePositionExists(ActivePosition memory activePosition, bytes1
 - Throws `ActivePositionNotFound` if not found.
 
 ### _checkBuyerVerified
+
+When to use: Use internally to validate that the buyer's identity has been verified.
 
 ````solidity
 function _checkBuyerVerified(bool isBuyerVerified) internal pure {
