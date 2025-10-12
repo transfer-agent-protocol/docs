@@ -1,13 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# don't use yarn zero-install philosophy
-.yarn/*
-!.yarn/patches
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
+# pnpm
+.pnpm-store
+.pnpm-debug.log
 
 # dependencies
 /node_modules
@@ -30,8 +25,7 @@
 
 # debug
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
 
 # local env files
 .env

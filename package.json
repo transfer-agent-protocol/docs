@@ -2,6 +2,7 @@
     "name": "tap-docs",
     "version": "1.0.0",
     "private": true,
+    "packageManager": "pnpm@10.18.2",
     "license": "MIT",
     "description": "Developer documentation for Transfer Agent Protocol",
     "scripts": {
@@ -9,7 +10,7 @@
         "build": "next build",
         "start": "next start",
         "eslint": "eslint --cache --cache-location=node_modules/.cache/.eslintcache --fix",
-        "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx,.mdx",
+        "lint": "pnpm eslint . --ext .js,.jsx,.ts,.tsx,.mdx",
         "format": "prettier '**/*' --ignore-unknown --write"
     },
     "dependencies": {

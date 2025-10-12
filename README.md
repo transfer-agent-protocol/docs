@@ -9,13 +9,13 @@ Clone the repository and install the dependencies:
 ```bash
 git clone https://github.com/transfer-agent-protocol/docs.git
 cd docs
-yarn install
+pnpm install
 ```
 
 Then you can run the app locally:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## To deploy docs
